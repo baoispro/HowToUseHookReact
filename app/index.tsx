@@ -1,15 +1,17 @@
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
+import {CounterApp} from "@/hooks/useState"
 
 export default function Index() {
+  const {count, increase, reset} = CounterApp();
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        padding: 20,
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Count: {count} </Text>
+      <Button title="Increase" onPress={increase}/>
+      <Button title="Reset" onPress={reset}/>
     </View>
   );
 }
